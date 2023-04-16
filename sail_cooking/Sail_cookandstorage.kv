@@ -64,5 +64,144 @@ MDScreenManager:
         size_hint: 0.995, 0.995
 
 
+        MDTopAppBar:
+            # title: app.title
+            # md_bg_color: "#e7e4c0"
+            # https://pictogrammers.com/library/mdi/
+            # https://github.com/kivymd/KivyMD/blob/master/kivymd/icon_definitions.py
+            left_action_items: [["ship-wheel", lambda x: left_nav_drawer.set_state("open"), "", ""]]
+
+            right_action_items: [["information-variant", lambda x: right_nav_drawer.set_state("open"), "", ""]]
+
+
+
+
+        MDBottomAppBar:
+
+            MDTopAppBar:
+                # title: ""
+                icon: "sail-boat"
+                type: "bottom"
+                on_action_button: 
+                    # root.restart_quiz()
+                    pass
+
+
+    MDNavigationDrawer:
+        id: left_nav_drawer
+        radius: (0, 16, 16, 0)
+        type: "modal"
+        # https://kivymd.readthedocs.io/en/1.1.1/components/navigationdrawer/index.html
+        # https://pictogrammers.com/library/mdi/
+
+        MDNavigationDrawerMenu:
+
+            MDNavigationDrawerHeader:
+                title: " Options"
+                title_color: "#4a4939"
+                text: ""
+                source: "assets/logo/SAIL_logo.png"
+                spacing: "4dp"
+                padding: "12dp", 0, 0, "56dp"
+
+
+            MDNavigationDrawerDivider:
+
+            MDNavigationDrawerItem:
+                icon: "cog"
+                text: "Setup"
+                on_release: 
+                    pass
+                    # root.switch_to_setup_view()
+
+
+
+    MDNavigationDrawer:
+        id: right_nav_drawer
+        anchor: "right"
+        radius: (0, 16, 16, 0)
+        type: "modal"
+
+        # https://pictogrammers.com/library/mdi/
+
+        MDNavigationDrawerMenu:
+
+            MDNavigationDrawerHeader:
+                title: "Impressum"
+                title_color: "#4a4939"
+                text: ""
+
+            MDNavigationDrawerDivider:
+
+            MDNavigationDrawerLabel:
+                text: "Name der Firma"
+
+            MDNavigationDrawerItem:
+                icon: "information-outline"
+                text: "H2 solutions"
+
+            MDNavigationDrawerDivider:
+
+            MDNavigationDrawerLabel:
+                text: "Addresse"
+
+            MDNavigationDrawerItem:
+                icon: "email-newsletter"
+                text: "Prinz-Carl-Anlage 25"
+            MDNavigationDrawerItem:
+                text: "67547 Worms"
+            MDNavigationDrawerItem:
+                text: "Deutschland"
+
+            MDNavigationDrawerDivider:
+
+            MDNavigationDrawerLabel:
+                text: "Ansprechpartner"
+
+            MDNavigationDrawerItem:
+                icon: "account"
+                text: "Heiko Kulinna"
+
+            MDNavigationDrawerDivider:
+
+            MDNavigationDrawerLabel:
+                text: "Kontaktaufnahme"
+
+            MDNavigationDrawerItem:
+                icon: "email-edit-outline"
+                text: "h2solutions@gmx.de"
+
+            MDNavigationDrawerItem:
+                icon: "phone"
+                text: "01577 13 2 13 54"
+            MDNavigationDrawerDivider:
+
+            MDNavigationDrawerLabel:
+                text: "Problem melden"
+
+            MDNavigationDrawerItem:
+                icon: "github"
+                text: "https://github.com/"
+            MDNavigationDrawerItem:
+                text: "heiko1234/"
+            MDNavigationDrawerItem:
+                text: "kivy_rightofway/"
+            MDNavigationDrawerItem:
+                text: "issues"
+
+            MDNavigationDrawerDivider:
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

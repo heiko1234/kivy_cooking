@@ -45,7 +45,7 @@ class WelcomeWindow(Screen):
         Clock.schedule_once(self.switch_to_second_view, 1)
 
     def switch_to_second_view(self, *args):
-        self.manager.current = "quizwindow"
+        self.manager.current = "setupwindow"
         self.manager.transition.direction="left"
 
         # boat_questions.start(number_questions = 10)

@@ -58,8 +58,35 @@ class SetupWindow(Screen):
     def any_function(self, *args):
         pass
 
+    def switch_to_Stammdaten(self, *args):
+        self.manager.current = "stammdatenwindow"
+        self.manager.transition.direction="left"
+
+    def switch_to_Bootskasse(self, *args):
+        self.manager.current = "bootskassewindow"
+        self.manager.transition.direction="left"
+
+    def switch_to_Bestand(self, *args):
+        self.manager.current = "bestandwindow"
+        self.manager.transition.direction="left"
 
 
+class BestandWindow(Screen):
+
+    def any_function(self, *args):
+        pass
+
+
+class StammdatenWindow(Screen):
+
+    def any_function(self, *args):
+        pass
+
+
+class BootskasseWindow(Screen):
+
+    def any_function(self, *args):
+        pass
 
 
 

@@ -19,6 +19,9 @@
 
 # https://www.youtube.com/watch?v=d0SQXNSZvKQ  Liste Speichern
 
+# # https://kivymd.readthedocs.io/en/1.1.1/components/widget/
+# # https://kivymd.readthedocs.io/en/1.1.1/components/card/index.html
+# # https://www.youtube.com/watch?v=Zz0sXyLDnL4
 
 
 
@@ -26,6 +29,44 @@
 MDScreenManager:
     WelcomeWindow:
     SetupWindow:
+    BestandWindow:
+    StammdatenWindow:
+    BootskasseWindow:
+
+
+<BestandWindow>:
+    name: "bestandwindow"
+
+    GridLayout:
+        cols: 1
+        size_hint: 0.995, 0.995
+
+
+        MDLabel:
+            text: "Bestand"
+            size_hint: (0.8, 0.8)
+
+
+
+<StammdatenWindow>:
+    name: "stammdatenwindow"
+
+    GridLayout:
+        cols: 1
+        size_hint: 0.995, 0.995
+
+
+
+<BootskasseWindow>:
+    name: "bootskassewindow"
+
+    GridLayout:
+        cols: 1
+        size_hint: 0.995, 0.995
+
+
+
+
 
 
 <WelcomeWindow>:
@@ -54,6 +95,8 @@ MDScreenManager:
 
 
 
+
+
 <SetupWindow>:
     name: "setupwindow"
 
@@ -74,76 +117,6 @@ MDScreenManager:
             right_action_items: [["information-variant", lambda x: right_nav_drawer.set_state("open"), "", ""]]
 
 
-    # GridLayout:
-    #     cols: 1
-    #     size_hint: 0.98, 0.95
-
-        # GridLayout:
-        #     cols: 1
-        #     size_hint: 1, 1
-            # ScrollView:
-                    # MDWidget:
-
-                # # https://kivymd.readthedocs.io/en/1.1.1/components/widget/
-                # # https://kivymd.readthedocs.io/en/1.1.1/components/card/index.html
-                # # https://www.youtube.com/watch?v=Zz0sXyLDnL4
-
-                # MDCard:
-
-                #     md_bg_color: "#f4dedc" #  (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
-                #     line_color: (1, 1, 1, 1)
-                #     shadow_offset: (0, 1)
-
-                #     MDLabel:
-                #         size_hint: (0.5, 1)
-                #         text: "Bestand"
-                #         halign: "left"
-                #         bold: True
-                #         color: (0.2, 0.2, 0.8, 1)
-
-                #     # MDSeparator:
-                #     #     height: "1dp"
-
-                #     MDLabel:
-                #         text: "longer Text: balblallbllblblblb hier sollte also etwas stehen, wie z.B: es sind gerade 19 Produkte im Bestand mit einem Wert von etwa 350 €. und nun folgt eine Liste"
-
-                #     # MDLabel:
-                #     #     size_hint: (0.5, 0.5)
-                #     #     text: "longer Text: balblallbllblblblbl"
-                #     #     halign: "left"
-                #     #     color: (0.2, 0.2, 0.8, 1)
-
-                #     # MDIconButton:
-                #     #     icon: "dots-vertical"
-
-                # MDCard:
-
-                #     md_bg_color: (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
-                #     line_color: (1, 1, 1, 1)
-                #     shadow_offset: (0, 1)
-
-                #     MDLabel:
-                #         size_hint: (0.5, 1)
-                #         text: "Einkaufszettel"
-                #         halign: "left"
-                #         bold: True
-                #         color: (0.2, 0.2, 0.8, 1)
-
-                #     MDLabel:
-                #         text: "hier könnte stehen: 10 Einträge auf der Einkaufsliste"
-
-                # MDCard:
-
-                #     md_bg_color: (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
-                #     line_color: (1, 1, 1, 1)
-                #     shadow_offset: (0, 1)
-
-                #     MDLabel:
-                #         size_hint: (0.5, 1)
-                #         text: "Rezeote"
-                #         halign: "left"
-                #         bold: True
-                #         color: (0.2, 0.2, 0.8, 1)
 
     GridLayout:
         cols: 1
@@ -154,38 +127,48 @@ MDScreenManager:
 
             MDScrollView:
 
-                MDList:
-                    id: md_list
-                    padding: 0
+                # MDList:
+                #     id: md_list
+                #     padding: 0
+
+                GridLayout:
+                    cols: 1
+                    size_hint: 0.98, 0.8
 
                     MDCard:
 
-                        md_bg_color: "#f4dedc" #  (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
+                        md_bg_color: "#f4dedc"   # 0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
                         line_color: (1, 1, 1, 1)
                         shadow_offset: (0, 1)
+                        orientation: "vertical"
+                        padding: 5
+
+                        on_release:
+                            root.switch_to_Bestand()
 
                         MDLabel:
-                            size_hint: (0.5, 1)
+                            size_hint: (0.8, 0.2)
+                            pos_hint: {"center_y": 0.2}
                             text: "Bestand"
-                            halign: "left"
+                            # halign: "left"
+                            # halign: "center"
                             bold: True
                             color: (0.2, 0.2, 0.8, 1)
 
-                        # MDSeparator:
-                        #     height: "1dp"
-
                         MDLabel:
                             text: "longer Text: balblallbllblblblb hier sollte also etwas stehen, wie z.B: es sind gerade 19 Produkte im Bestand mit einem Wert von etwa 350 €. und nun folgt eine Liste"
-
+                            size_hint: (0.8, 0.8)
 
                     MDCard:
 
-                        md_bg_color: (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
+                        md_bg_color: "#f4dedc"
                         line_color: (1, 1, 1, 1)
                         shadow_offset: (0, 1)
+                        orientation: "vertical"
+                        padding: 5
 
                         MDLabel:
-                            size_hint: (0.5, 1)
+                            size_hint: (0.8, 0.2)
                             text: "Einkaufszettel"
                             halign: "left"
                             bold: True
@@ -193,24 +176,26 @@ MDScreenManager:
 
                         MDLabel:
                             text: "hier könnte stehen: 10 Einträge auf der Einkaufsliste"
+                            size_hint: (0.8, 0.8)
 
                     MDCard:
 
-                        md_bg_color: (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
+                        md_bg_color: "#f4dedc"   # 0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
                         line_color: (1, 1, 1, 1)
                         shadow_offset: (0, 1)
+                        orientation: "vertical"
+                        padding: 5
 
                         MDLabel:
-                            size_hint: (0.5, 1)
-                            text: "Rezeote"
+                            size_hint: (0.8, 0.2)
+                            text: "Rezepte"
                             halign: "left"
                             bold: True
                             color: (0.2, 0.2, 0.8, 1)
 
-
-
-
-
+                        MDLabel:
+                            text: "Es gibt 0 Rezepte"
+                            size_hint: (0.8, 0.8)
 
 
     GridLayout:
@@ -246,23 +231,14 @@ MDScreenManager:
                 padding: "12dp", 0, 0, "56dp"
 
 
-            # MDNavigationDrawerDivider:
-
-            # MDNavigationDrawerItem:
-            #     icon: "cog"
-            #     text: "Setup"
-            #     on_release: 
-            #         pass
-            #         # root.switch_to_setup_view()
-
-
             MDNavigationDrawerDivider:
 
             MDNavigationDrawerItem:
                 icon: "text-box-check-outline"
                 text: "Bestand"
                 on_release:
-                    pass
+                    # pass
+                    root.switch_to_Bestand()
 
             MDNavigationDrawerItem:
                 icon: "silverware-fork-knife"
@@ -286,13 +262,15 @@ MDScreenManager:
                 icon: "wallet"
                 text: "Bootskasse"
                 on_release:
-                    pass
+                    # pass
+                    root.switch_to_Bootskasse()
 
             MDNavigationDrawerItem:
                 icon: "database-outline"
                 text: "Stammdaten"
                 on_release:
-                    pass
+                    # pass
+                    root.switch_to_Stammdaten()
 
 
     MDNavigationDrawer:
@@ -380,17 +358,7 @@ MDScreenManager:
             MDNavigationDrawerItem:
                 text: "issues"
 
-            MDNavigationDrawerDivider:
-
-
-
-
-
-
-
-
-
-
+            # MDNavigationDrawerDivider:
 
 
 

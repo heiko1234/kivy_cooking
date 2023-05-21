@@ -70,6 +70,23 @@ class SetupWindow(Screen):
         self.manager.current = "bestandwindow"
         self.manager.transition.direction="left"
 
+    def switch_to_Produkts(self, *args):
+        self.manager.current = "productswindow"
+        self.manager.transition.direction="left"
+
+
+class ProduktWindow(Screen):
+
+    def any_function(self, *args):
+        pass
+
+
+class ProdukteWindow(Screen):
+
+    def switch_to_product(self, *args):
+        self.manager.current = "productwindow"
+        self.manager.transition.direction="left"
+
 
 class BestandWindow(Screen):
 

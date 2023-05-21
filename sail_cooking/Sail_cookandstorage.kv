@@ -29,9 +29,73 @@
 MDScreenManager:
     WelcomeWindow:
     SetupWindow:
+    ProduktWindow:
+    ProdukteWindow:
     BestandWindow:
     StammdatenWindow:
     BootskasseWindow:
+
+
+<ProduktWindow>:
+    name: "productwindow"
+
+    GridLayout:
+        cols: 1
+        size_hint: 0.995, 0.995
+
+        MDTopAppBar:
+            title: "Produkt"
+            left_action_items: [["ship-wheel", "", "", ""]]  # [["ship-wheel", lambda x: left_nav_drawer.set_state("open"), "", ""]]
+
+        GridLayout:
+            cols: 2
+            size_hint: 0.8, 0.8
+
+            MDIconButton:
+                icon: 'tag'
+
+            MDTextField:
+                hint_text: "Name des Produktes"
+
+
+    GridLayout:
+        cols: 1
+        size_hint: 1, 0.8
+
+        MDBottomAppBar:
+
+            MDTopAppBar:
+                # title: ""
+                icon: "content-save"
+                type: "bottom"
+                on_action_button:
+                    pass
+
+
+<ProdukteWindow>:
+    name: "productswindow"
+
+    GridLayout:
+        cols: 1
+        size_hint: 0.995, 0.995
+
+        MDTopAppBar:
+            title: "Produkte"
+            left_action_items: [["ship-wheel", "", "", ""]]  # [["ship-wheel", lambda x: left_nav_drawer.set_state("open"), "", ""]]
+
+    GridLayout:
+        cols: 1
+        size_hint: 1, 0.8
+
+        MDBottomAppBar:
+
+            MDTopAppBar:
+                # title: ""
+                icon: "plus"
+                type: "bottom"
+                on_action_button:
+                    # pass
+                    root.switch_to_product()
 
 
 <BestandWindow>:
@@ -144,7 +208,8 @@ MDScreenManager:
                         padding: 5
 
                         on_release:
-                            root.switch_to_Bestand()
+                            # root.switch_to_Bestand()
+                            root.switch_to_Produkts()
 
                         MDLabel:
                             size_hint: (0.8, 0.2)

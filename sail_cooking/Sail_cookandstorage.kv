@@ -74,7 +74,148 @@ MDScreenManager:
             right_action_items: [["information-variant", lambda x: right_nav_drawer.set_state("open"), "", ""]]
 
 
+    # GridLayout:
+    #     cols: 1
+    #     size_hint: 0.98, 0.95
 
+        # GridLayout:
+        #     cols: 1
+        #     size_hint: 1, 1
+            # ScrollView:
+                    # MDWidget:
+
+                # # https://kivymd.readthedocs.io/en/1.1.1/components/widget/
+                # # https://kivymd.readthedocs.io/en/1.1.1/components/card/index.html
+                # # https://www.youtube.com/watch?v=Zz0sXyLDnL4
+
+                # MDCard:
+
+                #     md_bg_color: "#f4dedc" #  (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
+                #     line_color: (1, 1, 1, 1)
+                #     shadow_offset: (0, 1)
+
+                #     MDLabel:
+                #         size_hint: (0.5, 1)
+                #         text: "Bestand"
+                #         halign: "left"
+                #         bold: True
+                #         color: (0.2, 0.2, 0.8, 1)
+
+                #     # MDSeparator:
+                #     #     height: "1dp"
+
+                #     MDLabel:
+                #         text: "longer Text: balblallbllblblblb hier sollte also etwas stehen, wie z.B: es sind gerade 19 Produkte im Bestand mit einem Wert von etwa 350 €. und nun folgt eine Liste"
+
+                #     # MDLabel:
+                #     #     size_hint: (0.5, 0.5)
+                #     #     text: "longer Text: balblallbllblblblbl"
+                #     #     halign: "left"
+                #     #     color: (0.2, 0.2, 0.8, 1)
+
+                #     # MDIconButton:
+                #     #     icon: "dots-vertical"
+
+                # MDCard:
+
+                #     md_bg_color: (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
+                #     line_color: (1, 1, 1, 1)
+                #     shadow_offset: (0, 1)
+
+                #     MDLabel:
+                #         size_hint: (0.5, 1)
+                #         text: "Einkaufszettel"
+                #         halign: "left"
+                #         bold: True
+                #         color: (0.2, 0.2, 0.8, 1)
+
+                #     MDLabel:
+                #         text: "hier könnte stehen: 10 Einträge auf der Einkaufsliste"
+
+                # MDCard:
+
+                #     md_bg_color: (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
+                #     line_color: (1, 1, 1, 1)
+                #     shadow_offset: (0, 1)
+
+                #     MDLabel:
+                #         size_hint: (0.5, 1)
+                #         text: "Rezeote"
+                #         halign: "left"
+                #         bold: True
+                #         color: (0.2, 0.2, 0.8, 1)
+
+    GridLayout:
+        cols: 1
+        size_hint: 0.98, 0.8
+
+        MDBoxLayout:
+            orientation: "vertical"
+
+            MDScrollView:
+
+                MDList:
+                    id: md_list
+                    padding: 0
+
+                    MDCard:
+
+                        md_bg_color: "#f4dedc" #  (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
+                        line_color: (1, 1, 1, 1)
+                        shadow_offset: (0, 1)
+
+                        MDLabel:
+                            size_hint: (0.5, 1)
+                            text: "Bestand"
+                            halign: "left"
+                            bold: True
+                            color: (0.2, 0.2, 0.8, 1)
+
+                        # MDSeparator:
+                        #     height: "1dp"
+
+                        MDLabel:
+                            text: "longer Text: balblallbllblblblb hier sollte also etwas stehen, wie z.B: es sind gerade 19 Produkte im Bestand mit einem Wert von etwa 350 €. und nun folgt eine Liste"
+
+
+                    MDCard:
+
+                        md_bg_color: (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
+                        line_color: (1, 1, 1, 1)
+                        shadow_offset: (0, 1)
+
+                        MDLabel:
+                            size_hint: (0.5, 1)
+                            text: "Einkaufszettel"
+                            halign: "left"
+                            bold: True
+                            color: (0.2, 0.2, 0.8, 1)
+
+                        MDLabel:
+                            text: "hier könnte stehen: 10 Einträge auf der Einkaufsliste"
+
+                    MDCard:
+
+                        md_bg_color: (0.2, 0.2, 0.2, 0.8)  # app.theme_cls.primary_color
+                        line_color: (1, 1, 1, 1)
+                        shadow_offset: (0, 1)
+
+                        MDLabel:
+                            size_hint: (0.5, 1)
+                            text: "Rezeote"
+                            halign: "left"
+                            bold: True
+                            color: (0.2, 0.2, 0.8, 1)
+
+
+
+
+
+
+
+    GridLayout:
+        cols: 1
+        size_hint: 1, 0.8
 
         MDBottomAppBar:
 
@@ -97,7 +238,7 @@ MDScreenManager:
         MDNavigationDrawerMenu:
 
             MDNavigationDrawerHeader:
-                title: " Options"
+                title: " Navigation"
                 title_color: "#4a4939"
                 text: ""
                 source: "assets/logo/SAIL_logo.png"
@@ -105,15 +246,53 @@ MDScreenManager:
                 padding: "12dp", 0, 0, "56dp"
 
 
+            # MDNavigationDrawerDivider:
+
+            # MDNavigationDrawerItem:
+            #     icon: "cog"
+            #     text: "Setup"
+            #     on_release: 
+            #         pass
+            #         # root.switch_to_setup_view()
+
+
             MDNavigationDrawerDivider:
 
             MDNavigationDrawerItem:
-                icon: "cog"
-                text: "Setup"
-                on_release: 
+                icon: "text-box-check-outline"
+                text: "Bestand"
+                on_release:
                     pass
-                    # root.switch_to_setup_view()
 
+            MDNavigationDrawerItem:
+                icon: "silverware-fork-knife"
+                text: "Verbrauch"
+                on_release:
+                    pass
+
+            MDNavigationDrawerItem:
+                icon: "cart"
+                text: "Einkaufszettel"
+                on_release:
+                    pass
+
+            MDNavigationDrawerItem:
+                icon: "pasta"
+                text: "Rezepte"
+                on_release:
+                    pass
+
+            MDNavigationDrawerItem:
+                icon: "wallet"
+                text: "Bootskasse"
+                on_release:
+                    pass
+
+            MDNavigationDrawerItem:
+                icon: "database-outline"
+                text: "Stammdaten"
+                on_release:
+                    pass
 
 
     MDNavigationDrawer:
@@ -181,11 +360,23 @@ MDScreenManager:
 
             MDNavigationDrawerItem:
                 icon: "github"
+                # https://stackoverflow.com/questions/26886286/kivy-label-markup-link-change
+                text: ' [ref=https://github.com/heiko1234/kivy_cooking/issues]Report on Github[/ref]'
+                text_color: 0,0,1,1
+                # on_ref_press:
+                #     pass
+                on_release:
+                    import webbrowser
+                    webbrowser.open("https://github.com/heiko1234/kivy_cooking/issues")
+
+
+            MDNavigationDrawerItem:
+                icon: "github"
                 text: "https://github.com/"
             MDNavigationDrawerItem:
                 text: "heiko1234/"
             MDNavigationDrawerItem:
-                text: "kivy_rightofway/"
+                text: "kivy_cooking/"
             MDNavigationDrawerItem:
                 text: "issues"
 
